@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+body {
+    background: rgb(64, 64, 77);
+    font-family: 'Roboto', sans-serif;
+}
+.container {
+    background-color: rgb(245, 245, 245);
+    border-radius: 5px;
+    box-shadow: -3px 3px 5px rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    margin: 40px auto;
+    text-align: center;
+    transition: 200ms width ease-in-out;
+    width: 80%;
+}
+#timer-container,
+#btn-container {
+    margin: 15px auto;
+    width: 90%;
+}
+h1 {
+    font-size: 4em;
+    font-weight: lighter;
+    letter-spacing: 0.8rem;
+    margin-top: 20px;
+}
+button {
+    background-color: rgb(96, 96, 156);
+    /* background-image: radial-gradient(rgb(136, 136, 167), rgb(96, 96, 156)); */
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    box-shadow: -3px 3px 5px rgba(0, 0, 0, 0.5);
+    color: rgb(245, 245, 245);
+    font-size: 1.1em;
+    /* font-weight: bold; */
+    margin: 15px 8px;
+    padding: 10px 10px;
+    width: 25%;
+}
+button:disabled {
+    background-color: #d3d3d3;
+}
+#start-btn {
+    background: radial-gradient(rgb(79, 228, 104), rgb(1, 218, 37));
+}
+#pause-btn {
+    background: radial-gradient(rgb(233, 171, 84), rgb(230, 156, 54)); 
+}
+#reset-btn {
+    background: radial-gradient(rgb(219, 102, 98), rgb(221, 78, 73));
+}
+
+@media (min-width: 576px) {
+    .container {
+        width: 60%;
+    }
+    h1 {
+        font-size: 4em;
+        letter-spacing: 0.8rem;
+    }
+}
+@media (min-width: 768px) {
+    .container {
+        width: 50%;
+    }
+}
+@media (min-width: 992px) {
+    .container {
+        width: 40%;
+    }
+}
+
