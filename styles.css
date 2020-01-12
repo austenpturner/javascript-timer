@@ -1,0 +1,182 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+/* --- Base Element Styles --- */
+
+body {
+    background: rgb(64, 64, 77);
+    font-family: 'Roboto', sans-serif;
+}
+h1 {
+    font-size: 4em;
+    font-weight: lighter;
+    letter-spacing: 0.8rem;
+    margin-top: 20px;
+}
+.container {
+    background-color: rgb(245, 245, 245);
+    border-radius: 5px;
+    box-shadow: -3px 3px 5px rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    margin: 20px auto;
+    text-align: center;
+    transition: 200ms width ease-in-out;
+    width: 85%;
+}
+
+/* --- Switch Styles --- */
+
+.switch-container {
+    flex-direction: row;
+    padding: 8px;
+}
+.switch-container p {
+    font-size: 1.4em;
+    padding-top: 4px;
+    margin: 10px auto;
+    text-align: center;
+    width: 30%;
+}
+.switch {
+    position: relative;
+    display: inline-block;
+    margin: 10px auto;
+    width: 80px;
+    height: 40px;
+}
+
+/* Hide input checkbox but keep click/tab behavior */
+.switch input { 
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgb(2,117,216);
+    border-radius: 34px;
+    transition: 500ms;
+    transition: 500ms;
+}
+
+/* Slider toggle */
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 36px;
+    width: 36px;
+    left: 2px;
+    bottom: 2px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 50%;
+    transition: 500ms;
+    transition: 500ms;
+}
+
+/* When input is checked change slider background color to blue */
+input:checked + .slider {
+    background-color: rgb(2,117,216);
+}
+  
+/* When input is selected with tab then give slider a box-shadow */
+input:focus + .slider {
+    box-shadow: 0 0 5px rgb(2,117,216);
+}
+
+/*  When input is checked translate slider toggle to the right */
+input:checked + .slider:before {
+    transform: translateX(40px);
+} 
+
+/* --- Clock Styles --- */
+
+#clock-container,
+#clock-btns {
+    margin: 15px auto;
+    width: 90%;
+}
+
+/* --- Button Styles --- */
+
+button {
+    background-color: rgb(96, 96, 156);
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    box-shadow: -3px 3px 5px rgba(0, 0, 0, 0.5);
+    color: rgb(245, 245, 245);
+    font-size: 1.1em;
+    margin: 15px 8px;
+    padding: 10px 10px;
+    width: 25%;
+}
+#clock-start-btn {
+    background: radial-gradient(rgb(79, 228, 104), rgb(1, 218, 37));
+}
+#clock-pause-btn {
+    background: radial-gradient(rgb(233, 171, 84), rgb(230, 156, 54)); 
+}
+#clock-reset-btn {
+    background: radial-gradient(rgb(219, 102, 98), rgb(221, 78, 73));
+}
+#timer-set-btn,
+#timer-reset-btn {
+    background: radial-gradient(rgb(56, 147, 226), rgb(2,117,216));
+    margin: 10px 8px;
+    width: 35%;
+}
+
+/* --- Input Styles --- */
+
+#time-inputs {
+    display: flex;
+    flex-direction: row;
+    margin: 10px auto;
+    padding: 10px;
+}
+#time-inputs label {
+    font-size: 0.95em;
+    padding-top: 16px;
+}
+#time-inputs input {
+    border: 1px solid rgba(0, 0, 0, 0.2); 
+    border-radius: 5px;
+    font-size: 1em;
+    padding: 6px 4px;
+    margin: 8px;
+    width: 16%;
+}
+
+/* --- Media Queries --- */
+
+@media (min-width: 576px) {
+    .container,
+    .switch-container {
+        width: 68%;
+    }
+}
+@media (min-width: 768px) {
+    .container,
+    .switch-container {
+        width: 60%;
+    }
+}
+@media (min-width: 992px) {
+    .container,
+    .switch-container {
+        width: 40%;
+    }
+}
+
